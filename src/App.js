@@ -24,6 +24,9 @@ import AddProperty from "./pages/Auth/AddProperty";
 import Residencies from "./pages/Residencies/Residencies";
 import BookVisit from "./pages/Auth/BookVisit";
 import PropertyList from "./pages/list/Property";
+import BookingSuccess from "./pages/sucessPages/BookingSuccess";
+import PropertySuccess from "./pages/sucessPages/PropertySuccess";
+import LoginWithCode from "./pages/Auth/LoginWithCode";
 
 axios.defaults.withCredentials = true;
 
@@ -53,12 +56,15 @@ function App() {
                 </Layout>
               }
             />
+            <Route path="/booking-success" element={<BookingSuccess />} />
+            <Route path="/property-success" element={<PropertySuccess />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/create-property" element={<AddProperty />} />
             <Route path="/list-property" element={<PropertyList />} />
             <Route path="/create-booking" element={<BookVisit />} />
             <Route path="/forgot-password" element={<Forgot />} />
+            <Route path='/loginWithCode/:email' element={<LoginWithCode/>}/>
             <Route
               path="/verify/:verificationToken"
               element={

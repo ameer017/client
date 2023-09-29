@@ -108,7 +108,7 @@ const AddProperty = () => {
 
     // useEffect(() => {
     //     if(!isLoading && isSuccess){
-    //       navigate('/profile')
+    //       navigate('/property-success')
     //     }
     //     dispatch(RESET())
     // }, [isLoading, isSuccess, dispatch, navigate])

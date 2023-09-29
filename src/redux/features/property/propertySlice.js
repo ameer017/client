@@ -140,6 +140,7 @@ const propertySlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.property = action.payload;
+        toast.success("Property added successfully")
       })
       .addCase(createProperty.rejected, (state, action) => {
         state.isLoading = false;

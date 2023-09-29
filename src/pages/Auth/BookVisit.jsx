@@ -11,7 +11,7 @@ const initialState = {
     bookingEmail: '',
     phone: '',
     from: '',
-    to: ''
+    time: ''
 }
 
 
@@ -20,7 +20,7 @@ const BookVisit = () => {
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState(initialState);
-    const {name,  phone, from, to, bookingEmail} = formData
+    const {name,  phone, from, time, bookingEmail} = formData
 
     const {loading, success, message, error} = useSelector((state) => state.booking)
 
@@ -33,12 +33,12 @@ const BookVisit = () => {
   const bookVisit = async(e) => {
     e.preventDefault()
 
-    if(!name  || !phone || !from || !to) {
-      return toast.error("All fields are required")
-    }
+    // if(!name  || !phone || !from || !time) {
+    //   return toast.error("All fields are required")
+    // }
 
     const bookingData = {
-        name,  phone, from, to
+        name,  phone, from, time
     }
     
     await dispatch(createBooking(bookingData))
@@ -46,7 +46,7 @@ const BookVisit = () => {
   }
   useEffect(() => {
     if(success){
-      navigate('/')
+      navigate('/booking-success')
     }
 
     dispatch(RESET())
@@ -72,7 +72,7 @@ const BookVisit = () => {
                 <div className='flex__item'>
                     <input  name='from' placeholder="" type="date" className="input" onChange={handleInputChange} value={from}/>
 
-                    <input  name='to' placeholder="" type="date" className="input" onChange={handleInputChange} value={to}/>
+                    <input  name='time' placeholder="" type="time" className="input" onChange={handleInputChange} value={time}/>
                 </div>
 
             </div>
