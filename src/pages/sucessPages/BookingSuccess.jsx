@@ -19,6 +19,7 @@ const BookingSuccess = () => {
 
                     <div class="success-prompt-prompt">
                     <p>Your Booking order has been completed.</p>
+                    <p>Payment will be processed on site.</p>
                     <p>Enjoy Your Stay.</p>
                     </div>
                     <div class="success-button-container">

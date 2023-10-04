@@ -128,6 +128,13 @@ a {
   align-items: center;
 }
 
+.onlyFlex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2em;
+}
+
 .flexEnd {
   display: flex;
   justify-content: flex-end;

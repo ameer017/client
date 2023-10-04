@@ -7,12 +7,17 @@ import "./Residencies.css";
 import { sliderSettings } from "../../utils/common";
 import { useDispatch, useSelector } from "react-redux";
 import { getProperties, reUpdateProperty } from "../../redux/features/property/propertySlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import {BiHome} from 'react-icons/bi'
 
 const Residencies = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [search, setSearch] = useState("")
   
+  const home = () => {
+    navigate('/')
+  }
   
   const {isLoading, isSuccess, properties, property} = useSelector((state) => state.property)
   
@@ -65,8 +70,8 @@ const Residencies = () => {
   return (
     <div id="residencies" className="r-wrapper top">
       <div className="paddings innerWidth r-container">
-        <div className="flexColStart r-head">
-          <Link to='/'>Home</Link>
+        <div className="onlyFlex r-head">
+        <BiHome size={25} onClick={home} style={{cursor: 'pointer'}}/>
           <span className="primaryText">Popular Residencies</span>
         </div>
         

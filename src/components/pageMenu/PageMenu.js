@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AdminAuthorLink } from "../protect/HiddenLink";
 import {BiHome} from 'react-icons/bi'
+import {BsPersonCheck, BsPeopleFill} from 'react-icons/bs'
 
 const PageMenu = () => {
   const navigate = useNavigate()
@@ -10,28 +11,22 @@ const PageMenu = () => {
   }
   return (
     <div className="top">
-      <nav className="--btn-google --p --mb">
+          <BiHome size={25} onClick={home} style={{cursor: 'pointer'}}/>
+      <nav className="--btn-primary --p --mb">
         <ul className="home-links">
-          <BiHome size={25} onClick={home}/>
           <li>
-            <NavLink to="/profile">Profile</NavLink>
+            <NavLink to="/profile"><BsPersonCheck size={25}/></NavLink>
           </li>
           <AdminAuthorLink>
             <li>
-              <NavLink to="/users">Users</NavLink>
+              <NavLink to="/users"><BsPeopleFill size={25}/></NavLink>
             </li>
             <li>
-              <NavLink to="/list-property">Properties</NavLink>
+              <NavLink to="/list-property">properties</NavLink>
             </li>
-            {/* <li>
-              <NavLink to="/list-booking">Bookings</NavLink>
-            </li> */}
           </AdminAuthorLink>
           <li>
             <NavLink to="/update-profile">Update Profile</NavLink>
-          </li>
-          <li>
-            <NavLink to="/change-password">Change Password</NavLink>
           </li>
         </ul>
       </nav>
